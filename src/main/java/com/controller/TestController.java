@@ -25,7 +25,7 @@ public class TestController {
 	@RequestMapping(value="Login.do")
 	@ResponseBody
 	public User Login(HttpSession session,String UserName,String Password,@RequestParam(value="IsLogin", defaultValue="1",required=false) String IsLogin){
-		Map<String,User> UserList = session.getAttribute("UserList") != null ? (Map<String,User>) session.getAttribute("UserList") : new HashMap<>();
+		Map<String,User> UserList = (Map<String, User>) (session.getAttribute("UserList") != null ? (Map<String,User>) session.getAttribute("UserList") : new HashMap<>());
 		if(UserList.get(UserName) != null){
 			//判断日期和密码是否正确
 			User User = UserList.get(UserName);

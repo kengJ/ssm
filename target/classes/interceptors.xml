@@ -12,10 +12,10 @@
         
         
     <!--过滤所有请求，处理跨域请求问题--> 
-    <mvc:interceptors >
+    <mvc:interceptors>
 		<mvc:interceptor>  
     		<mvc:mapping path="/**"/>  
     		<bean class="com.interceptor.CommonInterceptor"></bean>  
 		</mvc:interceptor>  
-	</mvc:interceptors >
+	</mvc:interceptors>
 </beans>

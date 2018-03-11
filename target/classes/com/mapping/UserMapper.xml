@@ -75,7 +75,7 @@
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from user_t
+    from User
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -86,27 +86,27 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from user_t
+    from User
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from user_t
+    delete from User
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.model.UserExample">
-    delete from user_t
+    delete from User
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
   <insert id="insert" parameterType="com.model.User">
-    insert into user_t (id, user_name, password, 
+    insert into User (id, user_name, password, 
       age, lastation)
     values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{age,jdbcType=INTEGER}, #{lastation,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.model.User">
-    insert into user_t
+    insert into User
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
@@ -143,13 +143,13 @@
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.model.UserExample" resultType="java.lang.Long">
-    select count(*) from user_t
+    select count(*) from User
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update user_t
+    update User
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=INTEGER},
@@ -172,7 +172,7 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update user_t
+    update User
     set id = #{record.id,jdbcType=INTEGER},
       user_name = #{record.userName,jdbcType=VARCHAR},
       password = #{record.password,jdbcType=VARCHAR},
@@ -183,7 +183,7 @@
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.model.User">
-    update user_t
+    update User
     <set>
       <if test="userName != null">
         user_name = #{userName,jdbcType=VARCHAR},
@@ -201,7 +201,7 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.model.User">
-    update user_t
+    update User
     set user_name = #{userName,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       age = #{age,jdbcType=INTEGER},

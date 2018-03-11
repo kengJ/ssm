@@ -52,4 +52,10 @@ public class User {
     public void setLastation(Date lastation) {
         this.lastation = lastation;
     }
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", userName=" + userName + ", password=" + password + ", age=" + age + ", lastation="
+				+ lastation + "]";
+	}
 }
